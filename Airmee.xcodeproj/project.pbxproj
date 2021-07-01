@@ -17,6 +17,11 @@
 		8305C040268D96550015BF0E /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C03F268D96550015BF0E /* RequestError.swift */; };
 		8305C042268D96610015BF0E /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C041268D96610015BF0E /* HTTPMethod.swift */; };
 		8305C044268D966E0015BF0E /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C043268D966E0015BF0E /* RequestManager.swift */; };
+		8305C046268DB42B0015BF0E /* RequestManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C045268DB42B0015BF0E /* RequestManagerProtocol.swift */; };
+		8305C048268DB43F0015BF0E /* URLRequestLoggableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C047268DB43F0015BF0E /* URLRequestLoggableProtocol.swift */; };
+		8305C04A268DB4520015BF0E /* ResponseLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C049268DB4520015BF0E /* ResponseLog.swift */; };
+		8305C04C268DB47A0015BF0E /* ResponseValidatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C04B268DB47A0015BF0E /* ResponseValidatorProtocol.swift */; };
+		8305C04E268DB48E0015BF0E /* ResponseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C04D268DB48E0015BF0E /* ResponseValidator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,11 @@
 		8305C03F268D96550015BF0E /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		8305C041268D96610015BF0E /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		8305C043268D966E0015BF0E /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		8305C045268DB42B0015BF0E /* RequestManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManagerProtocol.swift; sourceTree = "<group>"; };
+		8305C047268DB43F0015BF0E /* URLRequestLoggableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestLoggableProtocol.swift; sourceTree = "<group>"; };
+		8305C049268DB4520015BF0E /* ResponseLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseLog.swift; sourceTree = "<group>"; };
+		8305C04B268DB47A0015BF0E /* ResponseValidatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseValidatorProtocol.swift; sourceTree = "<group>"; };
+		8305C04D268DB48E0015BF0E /* ResponseValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseValidator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +246,7 @@
 		8305C03C268D962B0015BF0E /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				8305C045268DB42B0015BF0E /* RequestManagerProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -243,6 +254,8 @@
 		8305C03D268D96370015BF0E /* APILogger */ = {
 			isa = PBXGroup;
 			children = (
+				8305C047268DB43F0015BF0E /* URLRequestLoggableProtocol.swift */,
+				8305C049268DB4520015BF0E /* ResponseLog.swift */,
 			);
 			path = APILogger;
 			sourceTree = "<group>";
@@ -250,6 +263,8 @@
 		8305C03E268D96400015BF0E /* ResponseValidator */ = {
 			isa = PBXGroup;
 			children = (
+				8305C04B268DB47A0015BF0E /* ResponseValidatorProtocol.swift */,
+				8305C04D268DB48E0015BF0E /* ResponseValidator.swift */,
 			);
 			path = ResponseValidator;
 			sourceTree = "<group>";
@@ -385,9 +400,14 @@
 			files = (
 				8305C040268D96550015BF0E /* RequestError.swift in Sources */,
 				8305C030268D95600015BF0E /* AppCoordinator.swift in Sources */,
+				8305C04E268DB48E0015BF0E /* ResponseValidator.swift in Sources */,
 				8305BFFC268D818E0015BF0E /* AppDelegate.swift in Sources */,
+				8305C04C268DB47A0015BF0E /* ResponseValidatorProtocol.swift in Sources */,
 				8305C044268D966E0015BF0E /* RequestManager.swift in Sources */,
+				8305C04A268DB4520015BF0E /* ResponseLog.swift in Sources */,
+				8305C048268DB43F0015BF0E /* URLRequestLoggableProtocol.swift in Sources */,
 				8305C042268D96610015BF0E /* HTTPMethod.swift in Sources */,
+				8305C046268DB42B0015BF0E /* RequestManagerProtocol.swift in Sources */,
 				8305C006268D818E0015BF0E /* Airmee.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
