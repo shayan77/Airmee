@@ -25,6 +25,10 @@
 		8305C050268DE6B80015BF0E /* AirmeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C04F268DE6B80015BF0E /* AirmeeTableViewCell.swift */; };
 		8305C052268DE6D40015BF0E /* AirmeeTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C051268DE6D40015BF0E /* AirmeeTableViewDataSource.swift */; };
 		8305C054268DE6E00015BF0E /* CellAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C053268DE6E00015BF0E /* CellAnimator.swift */; };
+		8305C057268DE8280015BF0E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C056268DE8280015BF0E /* Coordinator.swift */; };
+		8305C059268DE83A0015BF0E /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C058268DE83A0015BF0E /* Storyboarded.swift */; };
+		8305C05B268DEBCF0015BF0E /* Apartments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8305C05A268DEBCF0015BF0E /* Apartments.storyboard */; };
+		8305C05D268DEBF00015BF0E /* ApartmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C05C268DEBF00015BF0E /* ApartmentsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,10 @@
 		8305C04F268DE6B80015BF0E /* AirmeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirmeeTableViewCell.swift; sourceTree = "<group>"; };
 		8305C051268DE6D40015BF0E /* AirmeeTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirmeeTableViewDataSource.swift; sourceTree = "<group>"; };
 		8305C053268DE6E00015BF0E /* CellAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAnimator.swift; sourceTree = "<group>"; };
+		8305C056268DE8280015BF0E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		8305C058268DE83A0015BF0E /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		8305C05A268DEBCF0015BF0E /* Apartments.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Apartments.storyboard; sourceTree = "<group>"; };
+		8305C05C268DEBF00015BF0E /* ApartmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApartmentsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +219,8 @@
 		8305C037268D95BE0015BF0E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8305C05A268DEBCF0015BF0E /* Apartments.storyboard */,
+				8305C05C268DEBF00015BF0E /* ApartmentsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -238,6 +248,7 @@
 		8305C03A268D96010015BF0E /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				8305C055268DE7C90015BF0E /* Protocols */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -276,6 +287,15 @@
 				8305C04D268DB48E0015BF0E /* ResponseValidator.swift */,
 			);
 			path = ResponseValidator;
+			sourceTree = "<group>";
+		};
+		8305C055268DE7C90015BF0E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8305C056268DE8280015BF0E /* Coordinator.swift */,
+				8305C058268DE83A0015BF0E /* Storyboarded.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,6 +403,7 @@
 			files = (
 				8305C00B268D818F0015BF0E /* LaunchScreen.storyboard in Resources */,
 				8305C008268D818F0015BF0E /* Assets.xcassets in Resources */,
+				8305C05B268DEBCF0015BF0E /* Apartments.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +430,8 @@
 			files = (
 				8305C040268D96550015BF0E /* RequestError.swift in Sources */,
 				8305C030268D95600015BF0E /* AppCoordinator.swift in Sources */,
+				8305C05D268DEBF00015BF0E /* ApartmentsViewController.swift in Sources */,
+				8305C057268DE8280015BF0E /* Coordinator.swift in Sources */,
 				8305C04E268DB48E0015BF0E /* ResponseValidator.swift in Sources */,
 				8305BFFC268D818E0015BF0E /* AppDelegate.swift in Sources */,
 				8305C04C268DB47A0015BF0E /* ResponseValidatorProtocol.swift in Sources */,
@@ -421,6 +444,7 @@
 				8305C046268DB42B0015BF0E /* RequestManagerProtocol.swift in Sources */,
 				8305C054268DE6E00015BF0E /* CellAnimator.swift in Sources */,
 				8305C006268D818E0015BF0E /* Airmee.xcdatamodeld in Sources */,
+				8305C059268DE83A0015BF0E /* Storyboarded.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
