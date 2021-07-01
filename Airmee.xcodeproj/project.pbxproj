@@ -29,6 +29,10 @@
 		8305C059268DE83A0015BF0E /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C058268DE83A0015BF0E /* Storyboarded.swift */; };
 		8305C05B268DEBCF0015BF0E /* Apartments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8305C05A268DEBCF0015BF0E /* Apartments.storyboard */; };
 		8305C05D268DEBF00015BF0E /* ApartmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C05C268DEBF00015BF0E /* ApartmentsViewController.swift */; };
+		8305C05F268DEEC30015BF0E /* Apartment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C05E268DEEC30015BF0E /* Apartment.swift */; };
+		8305C061268DEF950015BF0E /* ApartmentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C060268DEF950015BF0E /* ApartmentService.swift */; };
+		8305C063268DF0F20015BF0E /* ApartmentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C062268DF0F20015BF0E /* ApartmentsViewModel.swift */; };
+		8305C066268DF2CA0015BF0E /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C065268DF2CA0015BF0E /* UIViewController+Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +81,10 @@
 		8305C058268DE83A0015BF0E /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		8305C05A268DEBCF0015BF0E /* Apartments.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Apartments.storyboard; sourceTree = "<group>"; };
 		8305C05C268DEBF00015BF0E /* ApartmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApartmentsViewController.swift; sourceTree = "<group>"; };
+		8305C05E268DEEC30015BF0E /* Apartment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apartment.swift; sourceTree = "<group>"; };
+		8305C060268DEF950015BF0E /* ApartmentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApartmentService.swift; sourceTree = "<group>"; };
+		8305C062268DF0F20015BF0E /* ApartmentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApartmentsViewModel.swift; sourceTree = "<group>"; };
+		8305C065268DF2CA0015BF0E /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +193,7 @@
 		8305C033268D957B0015BF0E /* UIKit Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				8305C064268DF2B80015BF0E /* Extensions */,
 				8305C03B268D96100015BF0E /* UITableViewDataSource */,
 				8305C03A268D96010015BF0E /* Coordinator */,
 			);
@@ -205,6 +214,7 @@
 		8305C035268D95B30015BF0E /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				8305C060268DEF950015BF0E /* ApartmentService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -212,6 +222,7 @@
 		8305C036268D95B90015BF0E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8305C062268DF0F20015BF0E /* ApartmentsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -228,6 +239,7 @@
 		8305C038268D95C10015BF0E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8305C05E268DEEC30015BF0E /* Apartment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,6 +308,14 @@
 				8305C058268DE83A0015BF0E /* Storyboarded.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8305C064268DF2B80015BF0E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8305C065268DF2CA0015BF0E /* UIViewController+Alert.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,7 +451,10 @@
 				8305C040268D96550015BF0E /* RequestError.swift in Sources */,
 				8305C030268D95600015BF0E /* AppCoordinator.swift in Sources */,
 				8305C05D268DEBF00015BF0E /* ApartmentsViewController.swift in Sources */,
+				8305C063268DF0F20015BF0E /* ApartmentsViewModel.swift in Sources */,
+				8305C061268DEF950015BF0E /* ApartmentService.swift in Sources */,
 				8305C057268DE8280015BF0E /* Coordinator.swift in Sources */,
+				8305C066268DF2CA0015BF0E /* UIViewController+Alert.swift in Sources */,
 				8305C04E268DB48E0015BF0E /* ResponseValidator.swift in Sources */,
 				8305BFFC268D818E0015BF0E /* AppDelegate.swift in Sources */,
 				8305C04C268DB47A0015BF0E /* ResponseValidatorProtocol.swift in Sources */,
@@ -442,6 +465,7 @@
 				8305C048268DB43F0015BF0E /* URLRequestLoggableProtocol.swift in Sources */,
 				8305C042268D96610015BF0E /* HTTPMethod.swift in Sources */,
 				8305C046268DB42B0015BF0E /* RequestManagerProtocol.swift in Sources */,
+				8305C05F268DEEC30015BF0E /* Apartment.swift in Sources */,
 				8305C054268DE6E00015BF0E /* CellAnimator.swift in Sources */,
 				8305C006268D818E0015BF0E /* Airmee.xcdatamodeld in Sources */,
 				8305C059268DE83A0015BF0E /* Storyboarded.swift in Sources */,
