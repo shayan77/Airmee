@@ -22,6 +22,9 @@
 		8305C04A268DB4520015BF0E /* ResponseLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C049268DB4520015BF0E /* ResponseLog.swift */; };
 		8305C04C268DB47A0015BF0E /* ResponseValidatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C04B268DB47A0015BF0E /* ResponseValidatorProtocol.swift */; };
 		8305C04E268DB48E0015BF0E /* ResponseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C04D268DB48E0015BF0E /* ResponseValidator.swift */; };
+		8305C050268DE6B80015BF0E /* AirmeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C04F268DE6B80015BF0E /* AirmeeTableViewCell.swift */; };
+		8305C052268DE6D40015BF0E /* AirmeeTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C051268DE6D40015BF0E /* AirmeeTableViewDataSource.swift */; };
+		8305C054268DE6E00015BF0E /* CellAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C053268DE6E00015BF0E /* CellAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		8305C049268DB4520015BF0E /* ResponseLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseLog.swift; sourceTree = "<group>"; };
 		8305C04B268DB47A0015BF0E /* ResponseValidatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseValidatorProtocol.swift; sourceTree = "<group>"; };
 		8305C04D268DB48E0015BF0E /* ResponseValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseValidator.swift; sourceTree = "<group>"; };
+		8305C04F268DE6B80015BF0E /* AirmeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirmeeTableViewCell.swift; sourceTree = "<group>"; };
+		8305C051268DE6D40015BF0E /* AirmeeTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirmeeTableViewDataSource.swift; sourceTree = "<group>"; };
+		8305C053268DE6E00015BF0E /* CellAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +245,9 @@
 		8305C03B268D96100015BF0E /* UITableViewDataSource */ = {
 			isa = PBXGroup;
 			children = (
+				8305C04F268DE6B80015BF0E /* AirmeeTableViewCell.swift */,
+				8305C051268DE6D40015BF0E /* AirmeeTableViewDataSource.swift */,
+				8305C053268DE6E00015BF0E /* CellAnimator.swift */,
 			);
 			path = UITableViewDataSource;
 			sourceTree = "<group>";
@@ -403,11 +412,14 @@
 				8305C04E268DB48E0015BF0E /* ResponseValidator.swift in Sources */,
 				8305BFFC268D818E0015BF0E /* AppDelegate.swift in Sources */,
 				8305C04C268DB47A0015BF0E /* ResponseValidatorProtocol.swift in Sources */,
+				8305C052268DE6D40015BF0E /* AirmeeTableViewDataSource.swift in Sources */,
 				8305C044268D966E0015BF0E /* RequestManager.swift in Sources */,
+				8305C050268DE6B80015BF0E /* AirmeeTableViewCell.swift in Sources */,
 				8305C04A268DB4520015BF0E /* ResponseLog.swift in Sources */,
 				8305C048268DB43F0015BF0E /* URLRequestLoggableProtocol.swift in Sources */,
 				8305C042268D96610015BF0E /* HTTPMethod.swift in Sources */,
 				8305C046268DB42B0015BF0E /* RequestManagerProtocol.swift in Sources */,
+				8305C054268DE6E00015BF0E /* CellAnimator.swift in Sources */,
 				8305C006268D818E0015BF0E /* Airmee.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
