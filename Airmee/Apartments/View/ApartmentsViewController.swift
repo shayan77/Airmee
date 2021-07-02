@@ -9,6 +9,16 @@ import UIKit
 
 class ApartmentsViewController: UIViewController, Storyboarded {
     
+    // MARK: - Properties
+    @IBOutlet var apartmentsTableView: UITableView!
+    @IBOutlet var loading: UIActivityIndicatorView! {
+        didSet {
+            loading.hidesWhenStopped = true
+        }
+    }
+    
+    private var apartmentsTableViewDataSource: AirmeeTableViewDataSource<ApartmentCell>!
+    
     weak var coordinator: AppCoordinator?
     
     let apartmentsViewModel = ApartmentsViewModel(apartmentService: ApartmentService.shared)
@@ -16,8 +26,19 @@ class ApartmentsViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupView()
         setupBindings()
         getData()
+    }
+    
+    // MARK: - Customizing View
+    private func setupView() {
+        self.title = "Apartments"
+        
+        // apartmentsTableViewDataSource
+        apartmentsTableViewDataSource = AirmeeTableViewDataSource(cellHeight: 100, items: [], tableView: apartmentsTableView, delegate: self, animationType: .type2(0.5))
+        apartmentsTableView.delegate = apartmentsTableViewDataSource
+        apartmentsTableView.dataSource = apartmentsTableViewDataSource
     }
     
     // MARK: - Bindings
@@ -26,15 +47,14 @@ class ApartmentsViewController: UIViewController, Storyboarded {
         // Subscribe to Loading
         apartmentsViewModel.loading = { [weak self] isLoading in
             guard let self = self else { return }
-//            isLoading ? self.loading.startAnimating() : self.loading.stopAnimating()
+            isLoading ? self.loading.startAnimating() : self.loading.stopAnimating()
         }
         
         // Subscribe to apartments
         apartmentsViewModel.apartments = { [weak self] apartments in
             guard let self = self else { return }
-            print(apartments)
             // Add new apartments to tableView dataSource.
-//            self.citiesTableViewDataSource.refreshWithNewItems(cities)
+            self.apartmentsTableViewDataSource.appendItemsToTableView(apartments)
         }
         
         // Subscribe to errors
@@ -46,5 +66,20 @@ class ApartmentsViewController: UIViewController, Storyboarded {
     
     private func getData() {
         apartmentsViewModel.getApartments()
+    }
+}
+
+// MARK: - AirmeeTableViewDelegate
+extension ApartmentsViewController: AirmeeTableViewDelegate {
+    func tableView(willDisplay cellIndexPath: IndexPath, cell: UITableViewCell) {
+        if let apartmentCell = cell as? ApartmentCell {
+            apartmentCell.apartmentDetailButtonDelegate = self
+        }
+    }
+}
+
+extension ApartmentsViewController: ApartmentCellDetailButtonDelegate {
+    func apartmentDetail(for apartment: Apartment) {
+        print(apartment.id ?? "")
     }
 }

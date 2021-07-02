@@ -33,6 +33,8 @@
 		8305C061268DEF950015BF0E /* ApartmentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C060268DEF950015BF0E /* ApartmentService.swift */; };
 		8305C063268DF0F20015BF0E /* ApartmentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C062268DF0F20015BF0E /* ApartmentsViewModel.swift */; };
 		8305C066268DF2CA0015BF0E /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C065268DF2CA0015BF0E /* UIViewController+Alert.swift */; };
+		836B445F268ED53200D4C646 /* ApartmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836B445D268ED53200D4C646 /* ApartmentCell.swift */; };
+		836B4460268ED53200D4C646 /* ApartmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 836B445E268ED53200D4C646 /* ApartmentCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		8305C060268DEF950015BF0E /* ApartmentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApartmentService.swift; sourceTree = "<group>"; };
 		8305C062268DF0F20015BF0E /* ApartmentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApartmentsViewModel.swift; sourceTree = "<group>"; };
 		8305C065268DF2CA0015BF0E /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		836B445D268ED53200D4C646 /* ApartmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApartmentCell.swift; sourceTree = "<group>"; };
+		836B445E268ED53200D4C646 /* ApartmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApartmentCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +234,7 @@
 		8305C037268D95BE0015BF0E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				836B445C268ED51800D4C646 /* Cell */,
 				8305C05A268DEBCF0015BF0E /* Apartments.storyboard */,
 				8305C05C268DEBF00015BF0E /* ApartmentsViewController.swift */,
 			);
@@ -316,6 +321,15 @@
 				8305C065268DF2CA0015BF0E /* UIViewController+Alert.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		836B445C268ED51800D4C646 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				836B445D268ED53200D4C646 /* ApartmentCell.swift */,
+				836B445E268ED53200D4C646 /* ApartmentCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,6 +437,7 @@
 			files = (
 				8305C00B268D818F0015BF0E /* LaunchScreen.storyboard in Resources */,
 				8305C008268D818F0015BF0E /* Assets.xcassets in Resources */,
+				836B4460268ED53200D4C646 /* ApartmentCell.xib in Resources */,
 				8305C05B268DEBCF0015BF0E /* Apartments.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,6 +475,7 @@
 				8305C04C268DB47A0015BF0E /* ResponseValidatorProtocol.swift in Sources */,
 				8305C052268DE6D40015BF0E /* AirmeeTableViewDataSource.swift in Sources */,
 				8305C044268D966E0015BF0E /* RequestManager.swift in Sources */,
+				836B445F268ED53200D4C646 /* ApartmentCell.swift in Sources */,
 				8305C050268DE6B80015BF0E /* AirmeeTableViewCell.swift in Sources */,
 				8305C04A268DB4520015BF0E /* ResponseLog.swift in Sources */,
 				8305C048268DB43F0015BF0E /* URLRequestLoggableProtocol.swift in Sources */,
