@@ -84,26 +84,64 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9UK-cT-KS5">
+                                <rect key="frame" x="16" y="289" width="55.5" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFn-47-KUh">
+                                <rect key="frame" x="16" y="353" width="28" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yol-cM-plg">
+                                <rect key="frame" x="87.5" y="284" width="160" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="uro-t2-mV5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gQz-lb-GPH">
+                                <rect key="frame" x="87.5" y="348" width="160" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="ArK-CL-Hx6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Yol-cM-plg" firstAttribute="centerY" secondItem="9UK-cT-KS5" secondAttribute="centerY" id="6hF-Gl-FAr"/>
+                            <constraint firstItem="Yol-cM-plg" firstAttribute="leading" secondItem="9UK-cT-KS5" secondAttribute="trailing" constant="16" id="BTa-3b-Xg3"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="XHn-zA-Wwb" secondAttribute="trailing" constant="30" id="D7D-1j-ckx"/>
                             <constraint firstItem="4ty-db-dGm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="GTz-PS-bFv"/>
+                            <constraint firstItem="9UK-cT-KS5" firstAttribute="top" secondItem="4ty-db-dGm" secondAttribute="bottom" constant="60" id="HQy-ll-jY4"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Iwp-nQ-g9f" secondAttribute="trailing" constant="20" id="JQd-kK-LyV"/>
                             <constraint firstAttribute="bottom" secondItem="Iwp-nQ-g9f" secondAttribute="bottom" constant="34" id="QNG-py-vT9"/>
+                            <constraint firstItem="HFn-47-KUh" firstAttribute="top" secondItem="9UK-cT-KS5" secondAttribute="bottom" constant="40" id="RVw-Ef-9Cf"/>
                             <constraint firstItem="4ty-db-dGm" firstAttribute="top" secondItem="hhx-OH-e76" secondAttribute="bottom" constant="20" id="XjS-Ce-Cxn"/>
+                            <constraint firstItem="gQz-lb-GPH" firstAttribute="centerY" secondItem="HFn-47-KUh" secondAttribute="centerY" id="bxU-bu-3vj"/>
                             <constraint firstItem="XHn-zA-Wwb" firstAttribute="centerY" secondItem="4ty-db-dGm" secondAttribute="centerY" id="cRu-nE-MlY"/>
                             <constraint firstItem="Iwp-nQ-g9f" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="faJ-mz-k95"/>
+                            <constraint firstItem="9UK-cT-KS5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="lya-i8-s9b"/>
                             <constraint firstItem="hhx-OH-e76" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="p5p-Gz-qtG"/>
+                            <constraint firstItem="gQz-lb-GPH" firstAttribute="trailing" secondItem="Yol-cM-plg" secondAttribute="trailing" id="rrS-r1-tWa"/>
+                            <constraint firstItem="HFn-47-KUh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="ugz-o1-tBH"/>
                             <constraint firstItem="hhx-OH-e76" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="yY8-TV-9SP"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="applyBtn" destination="YYV-lT-Ghz" id="LfT-Qu-EQ5"/>
                         <outlet property="cancelBtn" destination="qBW-PA-kmp" id="jlb-l1-e20"/>
+                        <outlet property="fromTextField" destination="Yol-cM-plg" id="Wq2-EM-3mv"/>
                         <outlet property="oneBedSwitch" destination="Xbm-gx-ybt" id="yWc-rb-fPr"/>
                         <outlet property="threeBedsSwitch" destination="osD-ME-s7F" id="TwN-R6-dRa"/>
+                        <outlet property="toTextField" destination="gQz-lb-GPH" id="NcV-kI-mKn"/>
                         <outlet property="twoBedsSwitch" destination="HWw-wm-2eB" id="YJy-2G-tql"/>
                     </connections>
                 </viewController>

@@ -43,11 +43,30 @@ class FilterViewController: UIViewController, Storyboarded {
             cancelBtn.addTarget(self, action: #selector(didSelectCancelButton), for: .touchUpInside)
         }
     }
+    @IBOutlet var fromTextField: UITextField! {
+        didSet {
+            fromTextField.datePicker(target: self, doneAction: #selector(fromDoneAction), cancelAction: #selector(fromCancelAction))
+        }
+    }
+    @IBOutlet var toTextField: UITextField! {
+        didSet {
+            toTextField.isUserInteractionEnabled = false
+        }
+    }
     
     weak var coordinator: AppCoordinator?
     
     var appliedFilters = ApartmentFilter()
     weak var delegate: ApartmentsAppliedFiltersProtocol?
+    
+    var fromDate: Date? {
+        didSet {
+            toTextField.isUserInteractionEnabled = true
+            toTextField.datePicker(target: self, doneAction: #selector(toDoneAction), cancelAction: #selector(toCancelAction), minimumDate: fromDate ?? Date())
+
+        }
+    }
+    var toDate: Date?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,8 +93,39 @@ class FilterViewController: UIViewController, Storyboarded {
         appliedFilters.oneBed = oneBedSwitch.isOn
         appliedFilters.twoBeds = twoBedsSwitch.isOn
         appliedFilters.threeBeds = threeBedsSwitch.isOn
-        print(appliedFilters)
+        appliedFilters.fromDate = fromDate
+        appliedFilters.toDate = toDate
         delegate?.userDidSelectFilters(filters: appliedFilters)
         self.dismiss(animated: true)
+    }
+    
+    @objc func fromDoneAction() {
+        if let datePickerView = self.fromTextField.inputView as? UIDatePicker {
+            self.fromDate = datePickerView.date
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MMMM-dd"
+            let dateString = dateFormatter.string(from: datePickerView.date)
+            self.fromTextField.text = dateString
+            self.fromTextField.resignFirstResponder()
+        }
+    }
+    
+    @objc func fromCancelAction() {
+        fromTextField.resignFirstResponder()
+    }
+    
+    @objc func toDoneAction() {
+        if let datePickerView = self.toTextField.inputView as? UIDatePicker {
+            self.toDate = datePickerView.date
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MMMM-dd"
+            let dateString = dateFormatter.string(from: datePickerView.date)
+            self.toTextField.text = dateString
+            self.toTextField.resignFirstResponder()
+        }
+    }
+    
+    @objc func toCancelAction() {
+        toTextField.resignFirstResponder()
     }
 }

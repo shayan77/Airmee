@@ -41,6 +41,7 @@
 		836B4471268F21E400D4C646 /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 836B4470268F21E400D4C646 /* Filter.storyboard */; };
 		836B4473268F21F400D4C646 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836B4472268F21F400D4C646 /* FilterViewController.swift */; };
 		836B4476268F281600D4C646 /* ApartmentFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836B4475268F281600D4C646 /* ApartmentFilter.swift */; };
+		836B4478268F3DD900D4C646 /* UITextField+DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836B4477268F3DD900D4C646 /* UITextField+DatePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		836B4470268F21E400D4C646 /* Filter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filter.storyboard; sourceTree = "<group>"; };
 		836B4472268F21F400D4C646 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		836B4475268F281600D4C646 /* ApartmentFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApartmentFilter.swift; sourceTree = "<group>"; };
+		836B4477268F3DD900D4C646 /* UITextField+DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+DatePicker.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				8305C065268DF2CA0015BF0E /* UIViewController+Alert.swift */,
+				836B4477268F3DD900D4C646 /* UITextField+DatePicker.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 				8305C066268DF2CA0015BF0E /* UIViewController+Alert.swift in Sources */,
 				836B4469268EDF7500D4C646 /* MapViewController.swift in Sources */,
 				8305C04E268DB48E0015BF0E /* ResponseValidator.swift in Sources */,
+				836B4478268F3DD900D4C646 /* UITextField+DatePicker.swift in Sources */,
 				8305BFFC268D818E0015BF0E /* AppDelegate.swift in Sources */,
 				8305C04C268DB47A0015BF0E /* ResponseValidatorProtocol.swift in Sources */,
 				8305C052268DE6D40015BF0E /* AirmeeTableViewDataSource.swift in Sources */,
