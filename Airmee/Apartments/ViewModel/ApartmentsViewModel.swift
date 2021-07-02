@@ -28,6 +28,12 @@ class ApartmentsViewModel {
             getApartments()
         }
     }
+    
+    public var filter: ApartmentFilter? {
+        didSet {
+            self.apartments?(filterApartment())
+        }
+    }
             
     func getApartments() {
         self.loading?(true)
@@ -55,5 +61,33 @@ class ApartmentsViewModel {
     private func sortBasedOnDistance() {
         allApartments.sort { ($0.distance ?? 0) < ($1.distance ?? 0) }
         self.apartments?(self.allApartments)
+    }
+    
+    private func filterApartment() -> [Apartment] {
+        guard let filter = filter else {
+            return self.allApartments
+        }
+        
+        var beds = [Int]()
+        if filter.oneBed ?? false {
+            beds.append(1)
+        }
+        if filter.twoBeds ?? false {
+            beds.append(2)
+        }
+        if filter.threeBeds ?? false {
+            beds.append(3)
+        }
+        
+        if beds.isEmpty {
+            return self.allApartments
+        } else {
+            filterdApartments = allApartments
+                .filter({ (apartment) -> Bool in
+                    return beds.contains(apartment.bedrooms ?? 0)
+                })
+        }
+        
+        return self.filterdApartments
     }
 }

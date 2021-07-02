@@ -42,6 +42,8 @@ class ApartmentsViewController: UIViewController, Storyboarded {
         apartmentsTableView.delegate = apartmentsTableViewDataSource
         apartmentsTableView.dataSource = apartmentsTableViewDataSource
         
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterTapped))
+
         // Ask for Authorisation from the User.
         self.locationManager.requestAlwaysAuthorization()
 
@@ -53,6 +55,10 @@ class ApartmentsViewController: UIViewController, Storyboarded {
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
+    }
+    
+    @objc func filterTapped() {
+        popFilter()
     }
     
     // MARK: - Bindings
@@ -68,7 +74,7 @@ class ApartmentsViewController: UIViewController, Storyboarded {
         apartmentsViewModel.apartments = { [weak self] apartments in
             guard let self = self else { return }
             // Add new apartments to tableView dataSource.
-            self.apartmentsTableViewDataSource.appendItemsToTableView(apartments)
+            self.apartmentsTableViewDataSource.refreshWithNewItems(apartments)
         }
         
         // Subscribe to errors
@@ -76,6 +82,15 @@ class ApartmentsViewController: UIViewController, Storyboarded {
             guard let self = self else { return }
             self.showAlertWith(error)
         }
+    }
+    
+    func popFilter() {
+        let filterViewController = FilterViewController.instantiate(coordinator: self.coordinator)
+        filterViewController.delegate = self
+        filterViewController.appliedFilters = self.apartmentsViewModel.filter ?? ApartmentFilter()
+        let navigationControlr = UINavigationController(rootViewController: filterViewController)
+        navigationController?.modalPresentationStyle = .fullScreen
+        self.present(navigationControlr, animated: true, completion: nil)
     }
 }
 
@@ -94,7 +109,6 @@ extension ApartmentsViewController: ApartmentCellDetailButtonDelegate {
     }
 }
 
-
 extension ApartmentsViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
@@ -103,5 +117,11 @@ extension ApartmentsViewController: CLLocationManagerDelegate {
         if self.apartmentsViewModel.currentLocation == nil {
             self.apartmentsViewModel.currentLocation = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
         }
+    }
+}
+
+extension ApartmentsViewController: ApartmentsAppliedFiltersProtocol {
+    func userDidSelectFilters(filters: ApartmentFilter?) {
+        self.apartmentsViewModel.filter = filters
     }
 }

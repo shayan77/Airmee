@@ -38,6 +38,9 @@
 		836B4465268EDF6000D4C646 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836B4464268EDF6000D4C646 /* MapViewModel.swift */; };
 		836B4467268EDF6700D4C646 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 836B4466268EDF6700D4C646 /* Map.storyboard */; };
 		836B4469268EDF7500D4C646 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836B4468268EDF7500D4C646 /* MapViewController.swift */; };
+		836B4471268F21E400D4C646 /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 836B4470268F21E400D4C646 /* Filter.storyboard */; };
+		836B4473268F21F400D4C646 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836B4472268F21F400D4C646 /* FilterViewController.swift */; };
+		836B4476268F281600D4C646 /* ApartmentFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836B4475268F281600D4C646 /* ApartmentFilter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +98,9 @@
 		836B4464268EDF6000D4C646 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		836B4466268EDF6700D4C646 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		836B4468268EDF7500D4C646 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		836B4470268F21E400D4C646 /* Filter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filter.storyboard; sourceTree = "<group>"; };
+		836B4472268F21F400D4C646 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		836B4475268F281600D4C646 /* ApartmentFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApartmentFilter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +195,7 @@
 				8305C038268D95C10015BF0E /* Model */,
 				8305C037268D95BE0015BF0E /* View */,
 				8305C036268D95B90015BF0E /* ViewModel */,
+				836B446E268F21BB00D4C646 /* Filter */,
 			);
 			path = Apartments;
 			sourceTree = "<group>";
@@ -365,6 +372,32 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		836B446E268F21BB00D4C646 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				836B4474268F280300D4C646 /* Model */,
+				836B446F268F21C900D4C646 /* View */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		836B446F268F21C900D4C646 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				836B4470268F21E400D4C646 /* Filter.storyboard */,
+				836B4472268F21F400D4C646 /* FilterViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		836B4474268F280300D4C646 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				836B4475268F281600D4C646 /* ApartmentFilter.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -470,6 +503,7 @@
 			files = (
 				8305C00B268D818F0015BF0E /* LaunchScreen.storyboard in Resources */,
 				8305C008268D818F0015BF0E /* Assets.xcassets in Resources */,
+				836B4471268F21E400D4C646 /* Filter.storyboard in Resources */,
 				836B4467268EDF6700D4C646 /* Map.storyboard in Resources */,
 				836B4460268ED53200D4C646 /* ApartmentCell.xib in Resources */,
 				8305C05B268DEBCF0015BF0E /* Apartments.storyboard in Resources */,
@@ -502,6 +536,7 @@
 				8305C05D268DEBF00015BF0E /* ApartmentsViewController.swift in Sources */,
 				8305C063268DF0F20015BF0E /* ApartmentsViewModel.swift in Sources */,
 				8305C061268DEF950015BF0E /* ApartmentService.swift in Sources */,
+				836B4476268F281600D4C646 /* ApartmentFilter.swift in Sources */,
 				8305C057268DE8280015BF0E /* Coordinator.swift in Sources */,
 				8305C066268DF2CA0015BF0E /* UIViewController+Alert.swift in Sources */,
 				836B4469268EDF7500D4C646 /* MapViewController.swift in Sources */,
@@ -516,6 +551,7 @@
 				8305C04A268DB4520015BF0E /* ResponseLog.swift in Sources */,
 				8305C048268DB43F0015BF0E /* URLRequestLoggableProtocol.swift in Sources */,
 				8305C042268D96610015BF0E /* HTTPMethod.swift in Sources */,
+				836B4473268F21F400D4C646 /* FilterViewController.swift in Sources */,
 				8305C046268DB42B0015BF0E /* RequestManagerProtocol.swift in Sources */,
 				8305C05F268DEEC30015BF0E /* Apartment.swift in Sources */,
 				8305C054268DE6E00015BF0E /* CellAnimator.swift in Sources */,
