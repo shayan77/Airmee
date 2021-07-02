@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="qT0-Kz-Ccz">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="l1N-qu-enT" customClass="MapViewController" customModule="Airmee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qXJ-en-0AW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aGh-zK-TAp">
+                                <rect key="frame" x="0.0" y="44" width="414" height="745"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RhV-Kv-D2o">
+                                <rect key="frame" x="20" y="814" width="374" height="48"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="ufg-UI-FNP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Book This Apartment">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pJS-7X-krO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aGh-zK-TAp" firstAttribute="top" secondItem="pJS-7X-krO" secondAttribute="top" id="Hvu-92-pG1"/>
+                            <constraint firstAttribute="bottom" secondItem="RhV-Kv-D2o" secondAttribute="bottom" constant="34" id="QTY-Tb-VNA"/>
+                            <constraint firstItem="pJS-7X-krO" firstAttribute="trailing" secondItem="aGh-zK-TAp" secondAttribute="trailing" id="U3t-LL-GiJ"/>
+                            <constraint firstItem="aGh-zK-TAp" firstAttribute="leading" secondItem="pJS-7X-krO" secondAttribute="leading" id="jXA-gI-mOn"/>
+                            <constraint firstItem="pJS-7X-krO" firstAttribute="trailing" secondItem="RhV-Kv-D2o" secondAttribute="trailing" constant="20" id="nSs-pw-jaY"/>
+                            <constraint firstItem="RhV-Kv-D2o" firstAttribute="leading" secondItem="pJS-7X-krO" secondAttribute="leading" constant="20" id="thL-uB-yMv"/>
+                            <constraint firstItem="RhV-Kv-D2o" firstAttribute="top" secondItem="aGh-zK-TAp" secondAttribute="bottom" constant="25" id="zQh-xr-cy2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bookBtn" destination="RhV-Kv-D2o" id="pI3-0G-pj6"/>
+                        <outlet property="map" destination="aGh-zK-TAp" id="KLR-2z-qrY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QSb-dz-vpC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-143" y="84"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

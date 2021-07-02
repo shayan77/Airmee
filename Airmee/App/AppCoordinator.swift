@@ -37,11 +37,11 @@ final class AppCoordinator: NSObject, Coordinator {
         navigationController.pushViewController(apartmentsViewController, animated: true)
     }
     
-//    func navigateToMap(_ city: City) {
-//        let mapViewController = MapViewController.instantiate(coordinator: self)
-//        mapViewController.mapViewModel.city = city
-//        navigationController.pushViewController(mapViewController, animated: true)
-//    }
+    func navigateToMap(_ apartment: Apartment) {
+        let mapViewController = MapViewController.instantiate(coordinator: self)
+        mapViewController.mapViewModel.apartment = apartment
+        navigationController.pushViewController(mapViewController, animated: true)
+    }
 }
 
 extension AppCoordinator: UINavigationControllerDelegate {

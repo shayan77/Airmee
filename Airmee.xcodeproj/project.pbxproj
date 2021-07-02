@@ -35,6 +35,9 @@
 		8305C066268DF2CA0015BF0E /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C065268DF2CA0015BF0E /* UIViewController+Alert.swift */; };
 		836B445F268ED53200D4C646 /* ApartmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836B445D268ED53200D4C646 /* ApartmentCell.swift */; };
 		836B4460268ED53200D4C646 /* ApartmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 836B445E268ED53200D4C646 /* ApartmentCell.xib */; };
+		836B4465268EDF6000D4C646 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836B4464268EDF6000D4C646 /* MapViewModel.swift */; };
+		836B4467268EDF6700D4C646 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 836B4466268EDF6700D4C646 /* Map.storyboard */; };
+		836B4469268EDF7500D4C646 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836B4468268EDF7500D4C646 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +92,9 @@
 		8305C065268DF2CA0015BF0E /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		836B445D268ED53200D4C646 /* ApartmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApartmentCell.swift; sourceTree = "<group>"; };
 		836B445E268ED53200D4C646 /* ApartmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApartmentCell.xib; sourceTree = "<group>"; };
+		836B4464268EDF6000D4C646 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		836B4466268EDF6700D4C646 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		836B4468268EDF7500D4C646 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,7 @@
 			children = (
 				8305C02E268D95520015BF0E /* App */,
 				8305C031268D95680015BF0E /* Apartments */,
+				836B4461268EDF4000D4C646 /* Map */,
 				8305C032268D95730015BF0E /* Utilities */,
 				8305C033268D957B0015BF0E /* UIKit Utilities */,
 				8305C034268D958B0015BF0E /* Supporting Files */,
@@ -332,6 +339,32 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		836B4461268EDF4000D4C646 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				836B4463268EDF4E00D4C646 /* View */,
+				836B4462268EDF4800D4C646 /* ViewModel */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		836B4462268EDF4800D4C646 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				836B4464268EDF6000D4C646 /* MapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		836B4463268EDF4E00D4C646 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				836B4466268EDF6700D4C646 /* Map.storyboard */,
+				836B4468268EDF7500D4C646 /* MapViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -437,6 +470,7 @@
 			files = (
 				8305C00B268D818F0015BF0E /* LaunchScreen.storyboard in Resources */,
 				8305C008268D818F0015BF0E /* Assets.xcassets in Resources */,
+				836B4467268EDF6700D4C646 /* Map.storyboard in Resources */,
 				836B4460268ED53200D4C646 /* ApartmentCell.xib in Resources */,
 				8305C05B268DEBCF0015BF0E /* Apartments.storyboard in Resources */,
 			);
@@ -470,10 +504,12 @@
 				8305C061268DEF950015BF0E /* ApartmentService.swift in Sources */,
 				8305C057268DE8280015BF0E /* Coordinator.swift in Sources */,
 				8305C066268DF2CA0015BF0E /* UIViewController+Alert.swift in Sources */,
+				836B4469268EDF7500D4C646 /* MapViewController.swift in Sources */,
 				8305C04E268DB48E0015BF0E /* ResponseValidator.swift in Sources */,
 				8305BFFC268D818E0015BF0E /* AppDelegate.swift in Sources */,
 				8305C04C268DB47A0015BF0E /* ResponseValidatorProtocol.swift in Sources */,
 				8305C052268DE6D40015BF0E /* AirmeeTableViewDataSource.swift in Sources */,
+				836B4465268EDF6000D4C646 /* MapViewModel.swift in Sources */,
 				8305C044268D966E0015BF0E /* RequestManager.swift in Sources */,
 				836B445F268ED53200D4C646 /* ApartmentCell.swift in Sources */,
 				8305C050268DE6B80015BF0E /* AirmeeTableViewCell.swift in Sources */,

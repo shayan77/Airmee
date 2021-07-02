@@ -80,6 +80,6 @@ extension ApartmentsViewController: AirmeeTableViewDelegate {
 
 extension ApartmentsViewController: ApartmentCellDetailButtonDelegate {
     func apartmentDetail(for apartment: Apartment) {
-        print(apartment.id ?? "")
+        self.coordinator?.navigateToMap(apartment)
     }
 }
