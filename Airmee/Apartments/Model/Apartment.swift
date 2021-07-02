@@ -13,4 +13,5 @@ struct Apartment: Codable {
     let name: String?
     let latitude: Double?
     let longitude: Double?
+    var distance: Int? = 0
 }

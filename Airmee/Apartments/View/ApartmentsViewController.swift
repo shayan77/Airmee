@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ApartmentsViewController: UIViewController, Storyboarded {
     
@@ -22,13 +23,14 @@ class ApartmentsViewController: UIViewController, Storyboarded {
     weak var coordinator: AppCoordinator?
     
     let apartmentsViewModel = ApartmentsViewModel(apartmentService: ApartmentService.shared)
+    
+    let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupView()
         setupBindings()
-        getData()
     }
     
     // MARK: - Customizing View
@@ -39,6 +41,18 @@ class ApartmentsViewController: UIViewController, Storyboarded {
         apartmentsTableViewDataSource = AirmeeTableViewDataSource(cellHeight: 100, items: [], tableView: apartmentsTableView, delegate: self, animationType: .type2(0.5))
         apartmentsTableView.delegate = apartmentsTableViewDataSource
         apartmentsTableView.dataSource = apartmentsTableViewDataSource
+        
+        // Ask for Authorisation from the User.
+        self.locationManager.requestAlwaysAuthorization()
+
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
     }
     
     // MARK: - Bindings
@@ -63,10 +77,6 @@ class ApartmentsViewController: UIViewController, Storyboarded {
             self.showAlertWith(error)
         }
     }
-    
-    private func getData() {
-        apartmentsViewModel.getApartments()
-    }
 }
 
 // MARK: - AirmeeTableViewDelegate
@@ -81,5 +91,17 @@ extension ApartmentsViewController: AirmeeTableViewDelegate {
 extension ApartmentsViewController: ApartmentCellDetailButtonDelegate {
     func apartmentDetail(for apartment: Apartment) {
         self.coordinator?.navigateToMap(apartment)
+    }
+}
+
+
+extension ApartmentsViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        self.locationManager.stopUpdatingLocation()
+        if self.apartmentsViewModel.currentLocation == nil {
+            self.apartmentsViewModel.currentLocation = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
+        }
     }
 }

@@ -43,5 +43,11 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>To find your current location</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>To find your current location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>To find your current location</string>
 </dict>
 </plist>

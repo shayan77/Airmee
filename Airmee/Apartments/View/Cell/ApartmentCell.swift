@@ -15,7 +15,7 @@ class ApartmentCell: UITableViewCell {
     
     @IBOutlet var cellView: UIView!
     @IBOutlet var nameLbl: UILabel!
-    @IBOutlet var idLbl: UILabel!
+    @IBOutlet var distanceLbl: UILabel!
     @IBOutlet var bedCountsLbl: UILabel!
     @IBOutlet var detailBtn: UIButton!
     
@@ -50,7 +50,7 @@ extension ApartmentCell: AirmeeTableViewCell {
         self.apartment = item
         
         nameLbl.text = item.name ?? ""
-        idLbl.text = "id: \(item.id ?? "")"
+        distanceLbl.text = "\(item.distance ?? 0) meter far away"
         if let bedrooms = item.bedrooms {
             bedCountsLbl.text = "\(bedrooms) bed"
             if bedrooms > 1 {

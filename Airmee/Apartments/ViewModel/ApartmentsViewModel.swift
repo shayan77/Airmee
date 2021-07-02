@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 class ApartmentsViewModel {
     
@@ -21,6 +22,12 @@ class ApartmentsViewModel {
     
     public var allApartments: [Apartment] = []
     public var filterdApartments: [Apartment] = []
+    
+    public var currentLocation: CLLocation? {
+        didSet {
+            getApartments()
+        }
+    }
             
     func getApartments() {
         self.loading?(true)
@@ -30,10 +37,23 @@ class ApartmentsViewModel {
             switch apartmentsCallback {
             case .success(let apartments):
                 self.allApartments.append(contentsOf: apartments)
-                self.apartments?(self.allApartments)
+                self.findDistances()
             case .failure(let error):
                 self.errorHandler?(error.localizedDescription)
             }
         }
+    }
+    
+    private func findDistances() {
+        allApartments.indices.forEach {
+            let apartmentLocation = CLLocation(latitude: allApartments[$0].latitude ?? 0.0, longitude: allApartments[$0].longitude ?? 0.0)
+            allApartments[$0].distance = Int(currentLocation?.distance(from: apartmentLocation) ?? 0.0)
+        }
+        sortBasedOnDistance()
+    }
+    
+    private func sortBasedOnDistance() {
+        allApartments.sort { ($0.distance ?? 0) < ($1.distance ?? 0) }
+        self.apartments?(self.allApartments)
     }
 }

@@ -76,10 +76,10 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="bedCountsLbl" destination="UOk-m8-xnA" id="bwb-sW-g3E"/>
+                <outlet property="bedCountsLbl" destination="6kT-6G-eQL" id="ULB-g8-RSh"/>
                 <outlet property="cellView" destination="b41-8b-Zki" id="lQL-xd-B9M"/>
                 <outlet property="detailBtn" destination="Fly-e5-b7f" id="fYh-Md-eIK"/>
-                <outlet property="idLbl" destination="6kT-6G-eQL" id="8mS-Su-47D"/>
+                <outlet property="distanceLbl" destination="UOk-m8-xnA" id="wMQ-qO-Jcz"/>
                 <outlet property="nameLbl" destination="iN9-re-XGb" id="jUN-N0-Ihj"/>
             </connections>
             <point key="canvasLocation" x="121.73913043478262" y="81.026785714285708"/>
