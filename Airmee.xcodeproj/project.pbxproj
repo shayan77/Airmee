@@ -51,6 +51,7 @@
 		83B56C8E2691C99700EC95D6 /* ResponseValidatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B56C882691C99700EC95D6 /* ResponseValidatorMock.swift */; };
 		83B56C902691CA0900EC95D6 /* Test_NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B56C8F2691CA0900EC95D6 /* Test_NetworkConnection.swift */; };
 		83B56C922691CA2E00EC95D6 /* Test_ApartmentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B56C912691CA2E00EC95D6 /* Test_ApartmentService.swift */; };
+		83B56C9726921AEC00EC95D6 /* AppCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B56C9626921AEC00EC95D6 /* AppCoordinatorTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		83B56C8F2691CA0900EC95D6 /* Test_NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test_NetworkConnection.swift; sourceTree = "<group>"; };
 		83B56C912691CA2E00EC95D6 /* Test_ApartmentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test_ApartmentService.swift; sourceTree = "<group>"; };
 		83B56C932691CAE700EC95D6 /* AirmeeTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AirmeeTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		83B56C9626921AEC00EC95D6 /* AppCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 		8305C014268D81900015BF0E /* AirmeeTests */ = {
 			isa = PBXGroup;
 			children = (
+				83B56C9526921ACD00EC95D6 /* Coordinator */,
 				83B56C7D2691A60800EC95D6 /* TestApartmentScene */,
 				83B56C7E2691C91900EC95D6 /* UtilitiesTests */,
 				8305C017268D81900015BF0E /* Info.plist */,
@@ -462,6 +465,14 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		83B56C9526921ACD00EC95D6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				83B56C9626921AEC00EC95D6 /* AppCoordinatorTest.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -633,6 +644,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83B56C9726921AEC00EC95D6 /* AppCoordinatorTest.swift in Sources */,
 				83B56C8C2691C99700EC95D6 /* URLSessionMock.swift in Sources */,
 				83B56C922691CA2E00EC95D6 /* Test_ApartmentService.swift in Sources */,
 				83B56C8D2691C99700EC95D6 /* URLSessionDataTaskMock.swift in Sources */,
