@@ -11,6 +11,6 @@ struct ApartmentFilter: Codable {
     var oneBed: Bool? = false
     var twoBeds: Bool? = false
     var threeBeds: Bool? = false
-    var fromDate: Date?
-    var toDate: Date?
+    var departureDate: Date?
+    var returnDate: Date?
 }

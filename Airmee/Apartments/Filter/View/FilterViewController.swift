@@ -93,8 +93,8 @@ class FilterViewController: UIViewController, Storyboarded {
         appliedFilters.oneBed = oneBedSwitch.isOn
         appliedFilters.twoBeds = twoBedsSwitch.isOn
         appliedFilters.threeBeds = threeBedsSwitch.isOn
-        appliedFilters.fromDate = fromDate
-        appliedFilters.toDate = toDate
+        appliedFilters.departureDate = fromDate
+        appliedFilters.returnDate = toDate
         delegate?.userDidSelectFilters(filters: appliedFilters)
         self.dismiss(animated: true)
     }

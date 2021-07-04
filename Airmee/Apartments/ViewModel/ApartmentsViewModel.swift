@@ -44,7 +44,7 @@ class ApartmentsViewModel {
             self.loading?(false)
             switch apartmentsCallback {
             case .success(let apartments):
-                self.fetchObject()
+                self.fetchObject(completion: nil)
                 self.allApartments.append(contentsOf: apartments)
                 self.findDistances()
             case .failure(let error):
@@ -83,7 +83,7 @@ class ApartmentsViewModel {
         }
         
         if beds.isEmpty {
-            return self.allApartments
+            filterdApartments = allApartments
         } else {
             filterdApartments = allApartments
                 .filter({ (apartment) -> Bool in
@@ -91,14 +91,49 @@ class ApartmentsViewModel {
                 })
         }
         
+        fetchedApartments.forEach { apartment in
+            if checkDepartureDateIsInFilterDates(apartment: apartment) {
+                removeApartment(apartment: apartment)
+            }
+            if checkReturnDateIsInFilterDates(apartment: apartment) {
+                removeApartment(apartment: apartment)
+            }
+        }
+
         return self.filterdApartments
     }
     
-    public func reload() {
-        self.apartments?(self.allApartments)
+    private func checkDepartureDateIsInFilterDates(apartment: Apartment) -> Bool {
+        if apartment.departureDate?.isBetween(filter?.departureDate, and: filter?.returnDate) ?? false {
+            return true
+        }
+        return false
     }
     
-    private func fetchObject() {
+    private func checkReturnDateIsInFilterDates(apartment: Apartment) -> Bool {
+        if apartment.returnDate?.isBetween(filter?.departureDate, and: filter?.returnDate) ?? false {
+            return true
+        }
+        return false
+    }
+    
+    private func removeApartment(apartment: Apartment) {
+        filterdApartments.removeAll { $0.id == apartment.id }
+    }
+    
+    public func reload() {
+        if filter == nil {
+            self.apartments?(self.allApartments)
+        } else {
+            self.fetchObject {
+                print(self.filterdApartments.count)
+                self.apartments?(self.filterApartment())
+                print(self.filterdApartments.count)
+            }
+        }
+    }
+    
+    private func fetchObject(completion: Completion) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         
         // 1
@@ -111,20 +146,21 @@ class ApartmentsViewModel {
         do {
             let objects = try managedContext.fetch(fetchRequest)
             if !objects.isEmpty {
-                self.mapManagedObjectToModel(objects: objects)
+                self.mapManagedObjectToModel(objects: objects, completion: completion)
             }
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
     
-    private func mapManagedObjectToModel(objects: [NSManagedObject]) {
+    private func mapManagedObjectToModel(objects: [NSManagedObject], completion: Completion) {
+        self.fetchedApartments.removeAll()
         objects.forEach { object in
             let apartment = Apartment(id: object.value(forKey: "id") as? String, bedrooms: object.value(forKey: "bedrooms") as? Int, name: object.value(forKey: "name") as? String, latitude: object.value(forKey: "latitude") as? Double, longitude: object.value(forKey: "longitude") as? Double, distance: object.value(forKey: "distance") as? Int, departureDate: object.value(forKey: "departureDate") as? Date, returnDate: object.value(forKey: "returnDate") as? Date)
             self.fetchedApartments.append(apartment)
         }
         
-        print(self.fetchedApartments)
+        completion?()
     }
 }
 
