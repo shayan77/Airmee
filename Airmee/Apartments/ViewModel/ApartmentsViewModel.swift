@@ -22,7 +22,7 @@ class ApartmentsViewModel {
     
     public var allApartments: [Apartment] = []
     public var filterdApartments: [Apartment] = []
-    
+        
     public var currentLocation: CLLocation? {
         didSet {
             getApartments()
@@ -90,4 +90,12 @@ class ApartmentsViewModel {
         
         return self.filterdApartments
     }
+    
+    public func reload() {
+        self.apartments?(self.allApartments)
+    }
+}
+
+protocol ReloadApartments: AnyObject {
+    func reloadApartments()
 }

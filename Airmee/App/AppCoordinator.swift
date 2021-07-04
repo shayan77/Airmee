@@ -26,6 +26,8 @@ final class AppCoordinator: NSObject, Coordinator {
         navigationController.delegate = self
     }
     
+    private weak var reloadApartments: ReloadApartments?
+    
     // Start of the app
     func start(animated: Bool) {
         guard let window = window else { return }
@@ -34,13 +36,22 @@ final class AppCoordinator: NSObject, Coordinator {
         window.makeKeyAndVisible()
         
         let apartmentsViewController = ApartmentsViewController.instantiate(coordinator: self)
+        reloadApartments = apartmentsViewController
         navigationController.pushViewController(apartmentsViewController, animated: true)
+    }
+    
+    func reloadList() {
+        reloadApartments?.reloadApartments()
     }
     
     func navigateToMap(_ apartment: Apartment) {
         let mapViewController = MapViewController.instantiate(coordinator: self)
         mapViewController.mapViewModel.apartment = apartment
         navigationController.pushViewController(mapViewController, animated: true)
+    }
+    
+    func popViewController() {
+        navigationController.popViewController(animated: true)
     }
 }
 

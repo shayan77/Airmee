@@ -80,7 +80,7 @@ class ApartmentsViewController: UIViewController, Storyboarded {
         // Subscribe to errors
         apartmentsViewModel.errorHandler = { [weak self] error in
             guard let self = self else { return }
-            self.showAlertWith(error)
+            self.showAlertWith(error, title: "Error", completion: nil)
         }
     }
     
@@ -123,5 +123,11 @@ extension ApartmentsViewController: CLLocationManagerDelegate {
 extension ApartmentsViewController: ApartmentsAppliedFiltersProtocol {
     func userDidSelectFilters(filters: ApartmentFilter?) {
         self.apartmentsViewModel.filter = filters
+    }
+}
+
+extension ApartmentsViewController: ReloadApartments {
+    func reloadApartments() {
+        self.apartmentsViewModel.reload()
     }
 }

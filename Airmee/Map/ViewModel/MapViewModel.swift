@@ -5,7 +5,11 @@
 //  Created by Shayan Mehranpoor on 7/2/21.
 //
 
-import Foundation
+import UIKit
+import CoreData
+
+typealias Completion = (() -> Void)?
+typealias ErrorHandler = ((String) -> Void)?
 
 final class MapViewModel {
     
@@ -43,7 +47,7 @@ final class MapViewModel {
             _name = apartment?.name ?? ""
         }
     }
-    
+        
     public func setDateWith(_ date: Date, isDeparture: Bool) {
         if isDeparture {
             apartment?.departureDate = date
@@ -57,6 +61,35 @@ final class MapViewModel {
             return true
         } else {
             return false
+        }
+    }
+    
+    public func saveApartment(completion: Completion, saveError: ErrorHandler) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        // 1
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        // 2
+        let entity = NSEntityDescription.entity(forEntityName: "ApartmentModel", in: managedContext)!
+        let apartmentModel = NSManagedObject(entity: entity, insertInto: managedContext)
+        
+        // 3
+        apartmentModel.setValue(apartment?.id, forKey: "id")
+        apartmentModel.setValue(apartment?.bedrooms, forKey: "bedrooms")
+        apartmentModel.setValue(apartment?.name, forKey: "name")
+        apartmentModel.setValue(apartment?.latitude, forKey: "latitude")
+        apartmentModel.setValue(apartment?.longitude, forKey: "longitude")
+        apartmentModel.setValue(apartment?.distance, forKey: "distance")
+        apartmentModel.setValue(apartment?.departureDate, forKey: "departureDate")
+        apartmentModel.setValue(apartment?.returnDate, forKey: "returnDate")
+        
+        // 4
+        do {
+            try managedContext.save()
+            completion?()
+        } catch let error as NSError {
+            saveError?("Could not save. \(error), \(error.userInfo)")
         }
     }
 }

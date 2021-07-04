@@ -50,7 +50,14 @@ class MapViewController: UIViewController, Storyboarded {
     }
     
     @objc func didSelectBookButton() {
-        print("HELLLLO")
+        mapViewModel.saveApartment(completion: {
+            self.showAlertWith("The apartment has been saved successfully", title: "Congratulation", completion: {
+                self.coordinator?.reloadList()
+                self.coordinator?.popViewController()
+            })
+        }, saveError: { [self] error in
+            self.showAlertWith(error, title: "Error", completion: nil)
+        })
     }
     
     private func updateLocationOnMap(to location: CLLocation, with title: String?) {
