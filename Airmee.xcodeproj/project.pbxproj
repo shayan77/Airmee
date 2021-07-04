@@ -11,7 +11,6 @@
 		8305C006268D818E0015BF0E /* Airmee.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8305C004268D818E0015BF0E /* Airmee.xcdatamodeld */; };
 		8305C008268D818F0015BF0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8305C007268D818F0015BF0E /* Assets.xcassets */; };
 		8305C00B268D818F0015BF0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8305C009268D818F0015BF0E /* LaunchScreen.storyboard */; };
-		8305C016268D81900015BF0E /* AirmeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C015268D81900015BF0E /* AirmeeTests.swift */; };
 		8305C021268D81900015BF0E /* AirmeeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C020268D81900015BF0E /* AirmeeUITests.swift */; };
 		8305C030268D95600015BF0E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C02F268D95600015BF0E /* AppCoordinator.swift */; };
 		8305C040268D96550015BF0E /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305C03F268D96550015BF0E /* RequestError.swift */; };
@@ -44,6 +43,14 @@
 		836B4478268F3DD900D4C646 /* UITextField+DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836B4477268F3DD900D4C646 /* UITextField+DatePicker.swift */; };
 		83B56C7926918BB000EC95D6 /* Date+IsBetween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B56C7826918BB000EC95D6 /* Date+IsBetween.swift */; };
 		83B56C7C2691A28A00EC95D6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B56C7B2691A28A00EC95D6 /* LocationManager.swift */; };
+		83B56C822691C95F00EC95D6 /* UnitTestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B56C812691C95F00EC95D6 /* UnitTestError.swift */; };
+		83B56C892691C99700EC95D6 /* apartments.json in Resources */ = {isa = PBXBuildFile; fileRef = 83B56C832691C99700EC95D6 /* apartments.json */; };
+		83B56C8A2691C99700EC95D6 /* RequestManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B56C842691C99700EC95D6 /* RequestManagerMock.swift */; };
+		83B56C8C2691C99700EC95D6 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B56C862691C99700EC95D6 /* URLSessionMock.swift */; };
+		83B56C8D2691C99700EC95D6 /* URLSessionDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B56C872691C99700EC95D6 /* URLSessionDataTaskMock.swift */; };
+		83B56C8E2691C99700EC95D6 /* ResponseValidatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B56C882691C99700EC95D6 /* ResponseValidatorMock.swift */; };
+		83B56C902691CA0900EC95D6 /* Test_NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B56C8F2691CA0900EC95D6 /* Test_NetworkConnection.swift */; };
+		83B56C922691CA2E00EC95D6 /* Test_ApartmentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B56C912691CA2E00EC95D6 /* Test_ApartmentService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +78,6 @@
 		8305C00A268D818F0015BF0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8305C00C268D818F0015BF0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8305C011268D81900015BF0E /* AirmeeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirmeeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8305C015268D81900015BF0E /* AirmeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirmeeTests.swift; sourceTree = "<group>"; };
 		8305C017268D81900015BF0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8305C01C268D81900015BF0E /* AirmeeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirmeeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8305C020268D81900015BF0E /* AirmeeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirmeeUITests.swift; sourceTree = "<group>"; };
@@ -107,6 +113,15 @@
 		836B4477268F3DD900D4C646 /* UITextField+DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+DatePicker.swift"; sourceTree = "<group>"; };
 		83B56C7826918BB000EC95D6 /* Date+IsBetween.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+IsBetween.swift"; sourceTree = "<group>"; };
 		83B56C7B2691A28A00EC95D6 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		83B56C812691C95F00EC95D6 /* UnitTestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestError.swift; sourceTree = "<group>"; };
+		83B56C832691C99700EC95D6 /* apartments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = apartments.json; sourceTree = "<group>"; };
+		83B56C842691C99700EC95D6 /* RequestManagerMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManagerMock.swift; sourceTree = "<group>"; };
+		83B56C862691C99700EC95D6 /* URLSessionMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
+		83B56C872691C99700EC95D6 /* URLSessionDataTaskMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskMock.swift; sourceTree = "<group>"; };
+		83B56C882691C99700EC95D6 /* ResponseValidatorMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseValidatorMock.swift; sourceTree = "<group>"; };
+		83B56C8F2691CA0900EC95D6 /* Test_NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test_NetworkConnection.swift; sourceTree = "<group>"; };
+		83B56C912691CA2E00EC95D6 /* Test_ApartmentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test_ApartmentService.swift; sourceTree = "<group>"; };
+		83B56C932691CAE700EC95D6 /* AirmeeTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AirmeeTests-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,7 +185,8 @@
 		8305C014268D81900015BF0E /* AirmeeTests */ = {
 			isa = PBXGroup;
 			children = (
-				8305C015268D81900015BF0E /* AirmeeTests.swift */,
+				83B56C7D2691A60800EC95D6 /* TestApartmentScene */,
+				83B56C7E2691C91900EC95D6 /* UtilitiesTests */,
 				8305C017268D81900015BF0E /* Info.plist */,
 			);
 			path = AirmeeTests;
@@ -415,6 +431,37 @@
 			path = LocationManager;
 			sourceTree = "<group>";
 		};
+		83B56C7D2691A60800EC95D6 /* TestApartmentScene */ = {
+			isa = PBXGroup;
+			children = (
+				83B56C8F2691CA0900EC95D6 /* Test_NetworkConnection.swift */,
+				83B56C912691CA2E00EC95D6 /* Test_ApartmentService.swift */,
+			);
+			path = TestApartmentScene;
+			sourceTree = "<group>";
+		};
+		83B56C7E2691C91900EC95D6 /* UtilitiesTests */ = {
+			isa = PBXGroup;
+			children = (
+				83B56C7F2691C92E00EC95D6 /* Mocks */,
+				83B56C812691C95F00EC95D6 /* UnitTestError.swift */,
+				83B56C932691CAE700EC95D6 /* AirmeeTests-Bridging-Header.h */,
+			);
+			path = UtilitiesTests;
+			sourceTree = "<group>";
+		};
+		83B56C7F2691C92E00EC95D6 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				83B56C832691C99700EC95D6 /* apartments.json */,
+				83B56C842691C99700EC95D6 /* RequestManagerMock.swift */,
+				83B56C882691C99700EC95D6 /* ResponseValidatorMock.swift */,
+				83B56C872691C99700EC95D6 /* URLSessionDataTaskMock.swift */,
+				83B56C862691C99700EC95D6 /* URLSessionMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -485,6 +532,7 @@
 					};
 					8305C010268D81900015BF0E = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 						TestTargetID = 8305BFF7268D818E0015BF0E;
 					};
 					8305C01B268D81900015BF0E = {
@@ -531,6 +579,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83B56C892691C99700EC95D6 /* apartments.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,7 +633,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8305C016268D81900015BF0E /* AirmeeTests.swift in Sources */,
+				83B56C8C2691C99700EC95D6 /* URLSessionMock.swift in Sources */,
+				83B56C922691CA2E00EC95D6 /* Test_ApartmentService.swift in Sources */,
+				83B56C8D2691C99700EC95D6 /* URLSessionDataTaskMock.swift in Sources */,
+				83B56C8E2691C99700EC95D6 /* ResponseValidatorMock.swift in Sources */,
+				83B56C822691C95F00EC95D6 /* UnitTestError.swift in Sources */,
+				83B56C902691CA0900EC95D6 /* Test_NetworkConnection.swift in Sources */,
+				83B56C8A2691C99700EC95D6 /* RequestManagerMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,6 +839,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M5RJ49734H;
 				INFOPLIST_FILE = AirmeeTests/Info.plist;
@@ -795,6 +851,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Airmee.AirmeeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AirmeeTests/UtilitiesTests/AirmeeTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Airmee.app/Airmee";
@@ -806,6 +864,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M5RJ49734H;
 				INFOPLIST_FILE = AirmeeTests/Info.plist;
@@ -817,6 +876,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Airmee.AirmeeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AirmeeTests/UtilitiesTests/AirmeeTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Airmee.app/Airmee";

@@ -1,0 +1,72 @@
+[
+  {
+    "id" : "0x1",
+    "bedrooms" : 1,
+    "latitude" : 59.329439999999998,
+    "name" : "Noemia apt",
+    "longitude" : 18.066044999999999
+  },
+  {
+    "id" : "0x2",
+    "bedrooms" : 1,
+    "latitude" : 59.332532,
+    "name" : "Thalia apt",
+    "longitude" : 18.057945
+  },
+  {
+    "id" : "0x3",
+    "bedrooms" : 1,
+    "latitude" : 59.336613999999997,
+    "name" : "Ellie apt",
+    "longitude" : 18.0458
+  },
+  {
+    "id" : "0x4",
+    "bedrooms" : 1,
+    "latitude" : 59.357728999999999,
+    "name" : "Katherine apt",
+    "longitude" : 17.996521999999999
+  },
+  {
+    "id" : "0x5",
+    "bedrooms" : 2,
+    "latitude" : 59.377870999999999,
+    "name" : "Arpine apt",
+    "longitude" : 17.935983
+  },
+  {
+    "id" : "0x6",
+    "bedrooms" : 2,
+    "latitude" : 59.324272000000001,
+    "name" : "Georgia apt",
+    "longitude" : 17.846900999999999
+  },
+  {
+    "id" : "0x7",
+    "bedrooms" : 2,
+    "latitude" : 59.273031000000003,
+    "name" : "Nantia apt",
+    "longitude" : 18.111008999999999
+  },
+  {
+    "id" : "0x8",
+    "bedrooms" : 3,
+    "latitude" : 59.177559000000002,
+    "name" : "Suzan apt",
+    "longitude" : 17.976483000000002
+  },
+  {
+    "id" : "0x9",
+    "bedrooms" : 3,
+    "latitude" : 59.334781999999997,
+    "name" : "Patrick apt",
+    "longitude" : 18.121981999999999
+  },
+  {
+    "id" : "0x0",
+    "bedrooms" : 3,
+    "latitude" : 59.337375000000002,
+    "name" : "Mark apt",
+    "longitude" : 18.110026000000001
+  }
+]
