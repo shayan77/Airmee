@@ -81,6 +81,10 @@ class FilterViewController: UIViewController, Storyboarded {
         oneBedSwitch.setOn(appliedFilters.oneBed ?? false, animated: true)
         twoBedsSwitch.setOn(appliedFilters.twoBeds ?? false, animated: true)
         threeBedsSwitch.setOn(appliedFilters.threeBeds ?? false, animated: true)
+        fromTextField.text = appliedFilters.departureDate?.convertDateToString()
+        toTextField.text = appliedFilters.returnDate?.convertDateToString()
+        fromDate = appliedFilters.departureDate
+        toDate = appliedFilters.returnDate
     }
     
     @objc func didSelectCancelButton() {
@@ -102,10 +106,7 @@ class FilterViewController: UIViewController, Storyboarded {
     @objc func fromDoneAction() {
         if let datePickerView = self.fromTextField.inputView as? UIDatePicker {
             self.fromDate = datePickerView.date
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MMMM-dd"
-            let dateString = dateFormatter.string(from: datePickerView.date)
-            self.fromTextField.text = dateString
+            self.fromTextField.text = self.fromDate?.convertDateToString()
             self.fromTextField.resignFirstResponder()
         }
     }
@@ -117,10 +118,7 @@ class FilterViewController: UIViewController, Storyboarded {
     @objc func toDoneAction() {
         if let datePickerView = self.toTextField.inputView as? UIDatePicker {
             self.toDate = datePickerView.date
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MMMM-dd"
-            let dateString = dateFormatter.string(from: datePickerView.date)
-            self.toTextField.text = dateString
+            self.toTextField.text = self.toDate?.convertDateToString()
             self.toTextField.resignFirstResponder()
         }
     }

@@ -126,9 +126,7 @@ class ApartmentsViewModel {
             self.apartments?(self.allApartments)
         } else {
             self.fetchObject {
-                print(self.filterdApartments.count)
                 self.apartments?(self.filterApartment())
-                print(self.filterdApartments.count)
             }
         }
     }

@@ -17,4 +17,11 @@ extension Date {
         let castDate2 = date2 ?? defaultDate
         return (min(castDate1, castDate2) ... max(castDate1, castDate2)) ~= self
     }
+    
+    func convertDateToString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MMMM-dd"
+        let dateString = dateFormatter.string(from: self)
+        return dateString
+    }
 }
