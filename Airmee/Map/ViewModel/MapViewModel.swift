@@ -43,4 +43,20 @@ final class MapViewModel {
             _name = apartment?.name ?? ""
         }
     }
+    
+    public func setDateWith(_ date: Date, isDeparture: Bool) {
+        if isDeparture {
+            apartment?.departureDate = date
+        } else {
+            apartment?.returnDate = date
+        }
+    }
+    
+    public func toggleButton() -> Bool {
+        if (apartment?.departureDate != nil) && (apartment?.returnDate != nil) {
+            return true
+        } else {
+            return false
+        }
+    }
 }

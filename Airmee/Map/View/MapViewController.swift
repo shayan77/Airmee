@@ -13,6 +13,16 @@ class MapViewController: UIViewController, Storyboarded {
     // MARK: - Properties
     @IBOutlet var map: MKMapView!
     @IBOutlet var bookBtn: UIButton!
+    @IBOutlet var departureTextField: UITextField! {
+        didSet {
+            departureTextField.datePicker(target: self, doneAction: #selector(fromDoneAction), cancelAction: #selector(fromCancelAction))
+        }
+    }
+    @IBOutlet var returnTextField: UITextField! {
+        didSet {
+            returnTextField.isUserInteractionEnabled = false
+        }
+    }
     
     weak var coordinator: AppCoordinator?
     
@@ -35,6 +45,8 @@ class MapViewController: UIViewController, Storyboarded {
         
         let location = CLLocation(latitude: mapViewModel.latitude, longitude: mapViewModel.longitude)
         updateLocationOnMap(to: location, with: mapViewModel.name)
+        
+        toggleButton()
     }
     
     @objc func didSelectBookButton() {
@@ -51,5 +63,48 @@ class MapViewController: UIViewController, Storyboarded {
         
         let viewRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 200, longitudinalMeters: 200)
         self.map.setRegion(viewRegion, animated: true)
+    }
+    
+    @objc func fromDoneAction() {
+        if let datePickerView = self.departureTextField.inputView as? UIDatePicker {
+            self.mapViewModel.setDateWith(datePickerView.date, isDeparture: true)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MMMM-dd"
+            let dateString = dateFormatter.string(from: datePickerView.date)
+            self.departureTextField.text = dateString
+            self.departureTextField.resignFirstResponder()
+            self.returnTextField.datePicker(target: self, doneAction: #selector(toDoneAction), cancelAction: #selector(toCancelAction), minimumDate: mapViewModel.apartment?.departureDate ?? Date())
+            self.returnTextField.isUserInteractionEnabled = true
+        }
+    }
+    
+    @objc func fromCancelAction() {
+        departureTextField.resignFirstResponder()
+    }
+    
+    @objc func toDoneAction() {
+        if let datePickerView = self.returnTextField.inputView as? UIDatePicker {
+            self.mapViewModel.setDateWith(datePickerView.date, isDeparture: false)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MMMM-dd"
+            let dateString = dateFormatter.string(from: datePickerView.date)
+            self.returnTextField.text = dateString
+            self.returnTextField.resignFirstResponder()
+            self.toggleButton()
+        }
+    }
+    
+    @objc func toCancelAction() {
+        returnTextField.resignFirstResponder()
+    }
+    
+    private func toggleButton() {
+        if mapViewModel.toggleButton() {
+            bookBtn.alpha = 1.0
+            bookBtn.isUserInteractionEnabled = true
+        } else {
+            bookBtn.alpha = 0.5
+            bookBtn.isUserInteractionEnabled = false
+        }
     }
 }
