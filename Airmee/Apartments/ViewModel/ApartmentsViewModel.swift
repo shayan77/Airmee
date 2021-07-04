@@ -5,7 +5,8 @@
 //  Created by Shayan Mehranpoor on 7/1/21.
 //
 
-import Foundation
+import UIKit
+import CoreData
 import CoreLocation
 
 class ApartmentsViewModel {
@@ -22,6 +23,7 @@ class ApartmentsViewModel {
     
     public var allApartments: [Apartment] = []
     public var filterdApartments: [Apartment] = []
+    private var fetchedApartments: [Apartment] = []
         
     public var currentLocation: CLLocation? {
         didSet {
@@ -42,6 +44,7 @@ class ApartmentsViewModel {
             self.loading?(false)
             switch apartmentsCallback {
             case .success(let apartments):
+                self.fetchObject()
                 self.allApartments.append(contentsOf: apartments)
                 self.findDistances()
             case .failure(let error):
@@ -93,6 +96,35 @@ class ApartmentsViewModel {
     
     public func reload() {
         self.apartments?(self.allApartments)
+    }
+    
+    private func fetchObject() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        // 1
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        // 2
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "ApartmentModel")
+        
+        // 3
+        do {
+            let objects = try managedContext.fetch(fetchRequest)
+            if !objects.isEmpty {
+                self.mapManagedObjectToModel(objects: objects)
+            }
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+    }
+    
+    private func mapManagedObjectToModel(objects: [NSManagedObject]) {
+        objects.forEach { object in
+            let apartment = Apartment(id: object.value(forKey: "id") as? String, bedrooms: object.value(forKey: "bedrooms") as? Int, name: object.value(forKey: "name") as? String, latitude: object.value(forKey: "latitude") as? Double, longitude: object.value(forKey: "longitude") as? Double, distance: object.value(forKey: "distance") as? Int, departureDate: object.value(forKey: "departureDate") as? Date, returnDate: object.value(forKey: "returnDate") as? Date)
+            self.fetchedApartments.append(apartment)
+        }
+        
+        print(self.fetchedApartments)
     }
 }
 
