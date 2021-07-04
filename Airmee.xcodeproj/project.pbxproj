@@ -43,6 +43,7 @@
 		836B4476268F281600D4C646 /* ApartmentFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836B4475268F281600D4C646 /* ApartmentFilter.swift */; };
 		836B4478268F3DD900D4C646 /* UITextField+DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836B4477268F3DD900D4C646 /* UITextField+DatePicker.swift */; };
 		83B56C7926918BB000EC95D6 /* Date+IsBetween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B56C7826918BB000EC95D6 /* Date+IsBetween.swift */; };
+		83B56C7C2691A28A00EC95D6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B56C7B2691A28A00EC95D6 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		836B4475268F281600D4C646 /* ApartmentFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApartmentFilter.swift; sourceTree = "<group>"; };
 		836B4477268F3DD900D4C646 /* UITextField+DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+DatePicker.swift"; sourceTree = "<group>"; };
 		83B56C7826918BB000EC95D6 /* Date+IsBetween.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+IsBetween.swift"; sourceTree = "<group>"; };
+		83B56C7B2691A28A00EC95D6 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 		8305C033268D957B0015BF0E /* UIKit Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				83B56C7A2691A27B00EC95D6 /* LocationManager */,
 				8305C064268DF2B80015BF0E /* Extensions */,
 				8305C03B268D96100015BF0E /* UITableViewDataSource */,
 				8305C03A268D96010015BF0E /* Coordinator */,
@@ -404,6 +407,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		83B56C7A2691A27B00EC95D6 /* LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				83B56C7B2691A28A00EC95D6 /* LocationManager.swift */,
+			);
+			path = LocationManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -543,6 +554,7 @@
 				8305C063268DF0F20015BF0E /* ApartmentsViewModel.swift in Sources */,
 				8305C061268DEF950015BF0E /* ApartmentService.swift in Sources */,
 				836B4476268F281600D4C646 /* ApartmentFilter.swift in Sources */,
+				83B56C7C2691A28A00EC95D6 /* LocationManager.swift in Sources */,
 				8305C057268DE8280015BF0E /* Coordinator.swift in Sources */,
 				8305C066268DF2CA0015BF0E /* UIViewController+Alert.swift in Sources */,
 				836B4469268EDF7500D4C646 /* MapViewController.swift in Sources */,
